@@ -1,0 +1,2 @@
+# Hero-s-Journey
+ Hero's Journey is a Text based adventure game, made with C++. The game includes basic features like attack, block, heal and special attack, the special attack is monitored by a special attack counter which shows the number of time you can currently use a special attack, to recharge the counter you must defeat an enemy. I have plans to make some changes to the story and gameloop in the future to show some kinda of a progression.
