@@ -3,9 +3,18 @@
 
 using namespace std;
 
+void clearConsole()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 void gameStory()
 {
-    system("clear");
+    clearConsole();
 
     cout << "______________________" << endl;
     cout << "Welcome to the Hero's Journey!!" << endl;
@@ -53,7 +62,7 @@ public:
     {
         if (health <= 0)
         {
-            system("clear");
+            clearConsole();
 
             cout << "======================" << endl;
             cout << "The Mercenaries Won" << endl;
@@ -175,7 +184,7 @@ public:
     {
         if (health <= 0)
         {
-            system("clear");
+            clearConsole();
 
             cout << "========================" << endl;
             cout << "The Brothers Have Won" << endl;
@@ -233,7 +242,7 @@ void GameLoop(Player player, Enemy Enemy)
 
         if (playerChoice == 'a' || playerChoice == 'A')
         {
-            system("clear");
+            clearConsole();
             //Perform Attack
             Enemy.TakeDamage(player.GiveDamage());
 
@@ -252,7 +261,7 @@ void GameLoop(Player player, Enemy Enemy)
         }
         else if (playerChoice == 'h' || playerChoice == 'H')
         {
-            system("clear");
+            clearConsole();
             // Perform Heal
             player.Heal();
 
@@ -265,7 +274,7 @@ void GameLoop(Player player, Enemy Enemy)
         }
         else if (playerChoice == 'B' || playerChoice == 'b')
         {
-            system("clear");
+            clearConsole();
             //Player performs special move
 
             if (player.specialCounter > 0)
@@ -299,7 +308,7 @@ void GameLoop(Player player, Enemy Enemy)
         }
         else if (playerChoice == 'D' || playerChoice == 'd')
         {
-            system("clear");
+            clearConsole();
             //Player defends enemy attack
             player.Defend();
 
@@ -307,7 +316,7 @@ void GameLoop(Player player, Enemy Enemy)
         }
         else
         {
-            system("clear");
+            clearConsole();
             cout << "______________________" << endl;
             cout << "Invalid Input!! " << endl;
         }
@@ -329,6 +338,7 @@ int main()
 
         if (userInput == 'S' || userInput == 's')
         {
+            clearConsole();
             Player playerObj;
             Enemy EnemyObj;
             GameLoop(playerObj, EnemyObj);
